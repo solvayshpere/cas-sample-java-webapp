@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>iamlabs.unicon.net</groupId>
-    <artifactId>cas-sample-java-webapp</artifactId>
+    <artifactId>cas-sample-java-webapp-01</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>CAS Example Java Web App</name>
+    <name>CAS Example Java Web App 01</name>
     <description>A sample web application that exercises the CAS protocol features via the Java CAS Client.</description>
     <build>
-        <finalName>cas-sample-java-webapp</finalName>
+        <finalName>cas-sample-java-webapp-01</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -36,6 +36,19 @@
                         <overrideDescriptor>${basedir}/etc/jetty/web.xml</overrideDescriptor>
                     </webApp>
                     <jvmArgs>-Xdebug -Xrunjdwp:transport=dt_socket,address=5002,server=y,suspend=n</jvmArgs>
+                </configuration>
+            </plugin>
+            <!--  为了测试方便,两个客户端都是使用http协议,引入tomcat插件，方便测试,默认是jetty。另一个客户端将端口改为 8082 -->
+            <!--  tomcat7 plugin -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8081</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <server>tomcat7</server>
+                    <path>/</path>
                 </configuration>
             </plugin>
         </plugins>

@@ -15,7 +15,9 @@
 </head>
 <body>
 
-<h1>CAS Example Java Web App</h1>
+<h1>当前为客户端1</h1>
+<h2><a href="http://app1.cas.com:8081/">客户端1</a></h2>
+<h2><a href="http://app2.cas.com:8082/">客户端2</a></h2>
 <p>A sample web application that exercises the CAS protocol features via the Java CAS Client.</p>
 <hr>
 
